@@ -43,7 +43,7 @@ app.use(bodyParser.urlencoded({ extended: true}));
 // manually you can do more sophisticated things:
 // Listen for requests coming to a specific URL: http://localhost:5000/quotes
 // app.get('end of url', function(request, response) {//do stuff})
-app.get('/quotes', function(req, res) { // sort of like an event handler for a specific thing
+app.get('/quotes', (req, res) => { // sort of like an event handler for a specific thing
     console.log('Ready to send back some quotes ');
     // console.log('request is: ', req); // has data about request that was made
     res.send(quotes); // array of quote objects
@@ -51,12 +51,12 @@ app.get('/quotes', function(req, res) { // sort of like an event handler for a s
 })
 
 // GET /first-quote
-app.get('/first-quote', function(req, res) {
+app.get('/first-quote', (req, res) => {
     res.send(quotes[0]);
 })
 
 // POST /quotes
-app.post('/quotes', function(req, res) {
+app.post('/quotes', (req, res) => {
     console.log('Woohoo, we got a new quote!');
 
     // Body parser gives us req.body
@@ -82,7 +82,7 @@ app.post('/quotes', function(req, res) {
 
 // Listen for requests:
 const port = 5000; // by convention choose a port higher than 3000
-app.listen(port, function(){
+app.listen(port, () => {
     // kind of like our onReady function with jQuery
     // this gets called when our app is up and running
     console.log(`App is up and running on localhost:${port}`);

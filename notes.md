@@ -154,3 +154,4 @@ helps make requests and responses to our server
 
 ## AJAX
 $.ajax()
+it comes with jQuery
