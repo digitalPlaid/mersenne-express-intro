@@ -155,3 +155,9 @@ helps make requests and responses to our server
 ## AJAX
 $.ajax()
 it comes with jQuery
+
+
+## starting your server:
+in package.json under the scripts object put a line in that says:
+"start": "node server/server.js"
+and then type in npm start to the console and it will work.
